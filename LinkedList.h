@@ -3,10 +3,6 @@
 using namespace std;
 
 
-// TO DO: complete destructor
-// + copy constructor,
-// Check on insertion functions ( am i missing a pointer reassignment?)
-
 template <typename T>
 class LinkedList {
 public:
@@ -92,7 +88,7 @@ LinkedList<T> ::LinkedList() {
 template <typename T>
 LinkedList<T> ::LinkedList(const LinkedList<T>& list) {
 
-//    nodeCount = list.nodeCount; or just increment nodecount
+//nodeCount = list.nodeCount; or just increment nodecount
 nodeCount = 0;
 head = nullptr;
 tail = nullptr;
@@ -187,10 +183,11 @@ unsigned int LinkedList<T> :: NodeCount() const{
 //that node in the passed in vector. Use of a parameter like this (passing a
 //something in by reference, and storing data for later use) is called an output
 //parameter.
-//Find Find the first node with a data value matching the passed in parameter,
+//Find the first node with a data value matching the passed in parameter,
 //        returning a pointer to that node. Returns nullptr if no matching node found.
 //GetNode Given an index, return a pointer to the node at that index. Throws an exception
 //        of type out_of_range if the index is out of range. Const and non-const versions.
+
 template <typename T>
 void LinkedList<T> ::FindAll(vector<Node*>& outData, const T& value) const {
     Node* currNode = head;
@@ -289,7 +286,7 @@ const typename LinkedList<T>::Node* LinkedList<T>::Tail() const {
 
 
 template <typename T>
-void LinkedList<T>::AddHead(const T& data) { //AddHead Create a new Node at the front of the list to store the passed in parameter.
+void LinkedList<T>::AddHead(const T& data) { // AddHead: Create a new Node at the front of the list to store the passed in parameter.
 
 
     if (nodeCount == 0) {
